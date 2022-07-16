@@ -12,21 +12,20 @@
 
 ActiveRecord::Schema.define(version: 2022_07_11_231639) do
 
-    create_table "kids", force: :cascade do |t|
-      t.string "name"
-      t.integer "age"
-      t.datetime "created_at", precision: 6, null: false
-      t.datetime "updated_at", precision: 6, null: false
-      t.string "img_src"
-    end
-  
-    create_table "memories", force: :cascade do |t|
-      t.string "body"
-      t.integer "kid_id"
-      t.datetime "created_at", precision: 6, null: false
-      t.datetime "updated_at", precision: 6, null: false
-      t.string "date"
-    end
-  
+  create_table "kids", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "img_src"
   end
-  
+
+  create_table "memories", force: :cascade do |t|
+    t.string "body"
+    t.integer "kid_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "date"
+  end
+
+end
