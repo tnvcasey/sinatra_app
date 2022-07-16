@@ -1,7 +1,16 @@
-require './config/environment'
+require_relative "./config/environment"
 
-if ActiveRecord::Migrator.needs_migration?
-  raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
+# Allow CORS (Cross-Origin Resource Sharing) requests
+use Rack::Cors do
+  allow do
+    origins '*'
+    resource '*', headers: :any, methods: [:get, :post, :delete, :put, :patch, :options, :head]
+  end
 end
 
+# Parse JSON from the request body into the params hash
+use Rack::JSONBodyParser
+
+use KidsController
+use MemoriesController
 run ApplicationController
