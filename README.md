@@ -11,3 +11,6 @@ Each model is seeded with initial data, thereby creating records, to start off t
 Sinatra is used to create the API for this app. Sinatra created the routes for the API of /kids, /memories, etc. in order to create fetch information for the frontend of the application. 
 
 Through Sinatra and Active Record, we are able to make get, post, patch, and delete requests to the database information. 
+
+Thanks for looking at my server-side code! Check out the frontend for my first fullstack application! You can add individual kids, add memories that belong to them, and read, delete, and edit the kids as well! 
+
