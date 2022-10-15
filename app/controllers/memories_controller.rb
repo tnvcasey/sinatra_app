@@ -6,7 +6,7 @@ class MemoriesController < ApplicationController
   end
 
   get "/memories/:id" do 
-    memories = Memory.find_by_id(params[:id])
+    memories = Memory.find(params[:id])
     memories.to_json(include: [:kid])
   end
 
@@ -22,19 +22,19 @@ class MemoriesController < ApplicationController
 
 
   patch "/memories/:id" do 
-    memory = Memory.find_by_id(params[:id])
+    memory = Memory.find(params[:id])
     memory.update(body: params[:body])
     memory.to_json(include: [:kid])
   end
 
   delete "/memories/:id" do 
-    memory = memory.find_by_id(params[:id])
+    memory = memory.find(params[:id])
     memory.destroy
     memory.to_json(include: [:kid])
   end
 
   get "/kids/:kid_id/memories" do 
-    kid = Kid.find_by_id(params("kid_id"))
+    kid = Kid.find(params("kid_id"))
     kid.memories.to_json(include: [:kid])
   end
 

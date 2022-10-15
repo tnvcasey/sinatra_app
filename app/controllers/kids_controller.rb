@@ -6,7 +6,7 @@ class KidsController < ApplicationController
       end
     
       get "/kids/:id" do 
-        kids = Kid.find_by_id(params[:id])
+        kids = Kid.find(params[:id])
         kids.to_json(include: [:memories])
       end
     
@@ -20,7 +20,7 @@ class KidsController < ApplicationController
       end
     
       patch "/kids/:id" do 
-        kid = Kid.find_by_id(params[:id])
+        kid = Kid.find(params[:id])
         kid.update(params)
         kid.to_json
       end
