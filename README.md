@@ -14,4 +14,4 @@ Through Sinatra and Active Record, we are able to make get, post, patch, and del
 
 Thanks for looking at my server-side code! Check out the frontend for my first fullstack application! You can add individual kids, add memories that belong to them, and read, delete, and edit the kids as well! 
 
-Go ahead and run 'rake server' to start up the backend. 
+Go ahead and run 'rake server' to start up the backend, then cd into 'my-app-frontend' and run 'npm start.' 
